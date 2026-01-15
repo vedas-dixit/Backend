@@ -1,4 +1,5 @@
 from pydantic import BaseModel
+
 from datetime import datetime
 class ApiRequest(BaseModel):
     user_id: str
@@ -8,10 +9,10 @@ class ApiRequest(BaseModel):
 class UserData(BaseModel):
     user_id: str
     ip_address: str
-    total_request: int
-    last_requested: datetime
+    window_start: datetime
+    count: int
 
-class RequesrResponse:
+class RequesrResponse(BaseModel):
     allowed: str
     remaining: int
     reset_at: datetime
